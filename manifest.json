@@ -1,0 +1,30 @@
+{
+    "name": "Canlı Döviz Kuru",
+    "version": "1.1",
+    "description": "Döviz kurlarını anlık olarak takip edebilirsin!",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+            "js/jquery.min.js",
+            "js/content.js"
+        ]
+    }],
+    "web_accessible_resources": [
+        "css/solid.min.css",
+        "css/fontawesome.min.css",
+        "images/corona.gif"
+    ],
+    "icons": {
+        "16": "images/turkish_lira_16.png",
+        "32": "images/turkish_lira_32.png",
+        "64": "images/turkish_lira_64.png",
+        "96": "images/turkish_lira_96.png"
+    },
+    "manifest_version": 2
+}
