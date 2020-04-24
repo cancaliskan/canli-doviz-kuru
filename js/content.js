@@ -35,8 +35,8 @@ $(document).ready(() => {
                 $(".currency #dollarUpdateTime").text(getInnerHtml(DollarXPathForLastUpdate));
 
                 $(".currency #euroBuyingPrice").text(getInnerHtml(EuroXPathForBuying));
-                $(".currency #euroSellingPrice").text(getInnerHtml(DollarXPathForSelling));
-                $(".currency #euroUpdateTime").text(getInnerHtml(DollarXPathForLastUpdate));
+                $(".currency #euroSellingPrice").text(getInnerHtml(EuroXPathForSelling));
+                $(".currency #euroUpdateTime").text(getInnerHtml(EuroXPathForLastUpdate));
 
                 $(".currency #gramGoldBuyingPrice").text(getInnerHtml(GramGoldXPathForBuying));
                 $(".currency #gramGoldSellingPrice").text(getInnerHtml(GramGoldXPathForSelling));
