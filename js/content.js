@@ -11,10 +11,14 @@ const GramGoldXPathForSelling = "//*[@id='hero']/div[1]/div[2]/table/tbody/tr[2]
 const GramGoldXPathForLastUpdate = "//*[@id='hero']/div[1]/div[2]/table/tbody/tr[2]/td[6]";
 
 const URL = "https://canlidoviz.com/";
+var doc = null;
 
 function htmlToElement(html) {
-    var doc = new DOMParser().parseFromString(html, "text/html");
-    return doc;
+    doc = new DOMParser().parseFromString(html, "text/html");
+}
+
+function getInnerHtml(XPath) {
+    return doc.evaluate(XPath, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML;
 }
 
 $(document).ready(() => {
@@ -24,20 +28,19 @@ $(document).ready(() => {
         if (req.readyState === 4) {
             var response = req.responseText;
             if (response) {
-                debugger;
-                var doc = htmlToElement(response);
+                htmlToElement(response);
                 $(".currency .message").hide();
-                $(".currency #dollarBuyingPrice").text(doc.evaluate(DollarXPathForBuying, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #dollarSellingPrice").text(doc.evaluate(DollarXPathForSelling, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #dollarUpdateTime").text(doc.evaluate(DollarXPathForLastUpdate, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
+                $(".currency #dollarBuyingPrice").text(getInnerHtml(DollarXPathForBuying));
+                $(".currency #dollarSellingPrice").text(getInnerHtml(DollarXPathForSelling));
+                $(".currency #dollarUpdateTime").text(getInnerHtml(DollarXPathForLastUpdate));
 
-                $(".currency #euroBuyingPrice").text(doc.evaluate(EuroXPathForBuying, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #euroSellingPrice").text(doc.evaluate(EuroXPathForSelling, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #euroUpdateTime").text(doc.evaluate(EuroXPathForLastUpdate, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
+                $(".currency #euroBuyingPrice").text(getInnerHtml(EuroXPathForBuying));
+                $(".currency #euroSellingPrice").text(getInnerHtml(DollarXPathForSelling));
+                $(".currency #euroUpdateTime").text(getInnerHtml(DollarXPathForLastUpdate));
 
-                $(".currency #gramGoldBuyingPrice").text(doc.evaluate(GramGoldXPathForBuying, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #gramGoldSellingPrice").text(doc.evaluate(GramGoldXPathForSelling, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
-                $(".currency #gramGoldUpdateTime").text(doc.evaluate(GramGoldXPathForLastUpdate, doc, null, XPathResult.ANY_TYPE, null).iterateNext().innerHTML);
+                $(".currency #gramGoldBuyingPrice").text(getInnerHtml(GramGoldXPathForBuying));
+                $(".currency #gramGoldSellingPrice").text(getInnerHtml(GramGoldXPathForSelling));
+                $(".currency #gramGoldUpdateTime").text(getInnerHtml(GramGoldXPathForLastUpdate));
             } else {
                 $(".currency section").hide();
                 $(".currency .message").text("Bir hata oluştu..");
