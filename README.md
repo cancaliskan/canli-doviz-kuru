@@ -1,5 +1,6 @@
 
 
+
 ## Canlı Döviz Kuru Eklentisi
 
 Döviz kurlarının alış satış fiyatlarını anlık olarak takip edebilirsin!
@@ -18,6 +19,4 @@ Döviz kurlarının alış satış fiyatlarını anlık olarak takip edebilirsin
 
 ### Kurulum
 
- - Bu repository'i zip olarak indirin ve zip içinden çıkartın.
- - Chrome tarayıcısı üzerinden uzantılar([chrome://extensions/](chrome://extensions/)) bölümüne gidin.
- - **Paketlenmiş öğe yükle** butonuna tıklayıp zip içinden çıkarttığınız doyanın yolunu seçin.
+[Linki](https://chrome.google.com/webstore/detail/canl%C4%B1-d%C3%B6viz-kuru/mplpnbpgmpelgijcanaljeoogpiblnaa) ziyaret ederek tarayıcınıza kurabilirsiniz.
