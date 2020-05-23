@@ -1,6 +1,6 @@
 {
     "name": "Canlı Döviz Kuru",
-    "version": "1.2",
+    "version": "1.2.1",
     "description": "Döviz kurlarını anlık olarak takip edebilirsin!",
     "browser_action": {
         "default_popup": "popup.html"
