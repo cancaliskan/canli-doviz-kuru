@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $('.currency section').addClass('loading');
-    $.getJSON({ url: "http://142.93.160.42/" }).done(data => {
+    $.getJSON({ url: "dovizapi.cancaliskan.me" }).done(data => {
         if (data) {
             $(".currency .message").hide();
             $(".currency #dollarBuyingPrice").text(data.Dollar.BuyingPrice);
