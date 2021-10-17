@@ -1,6 +1,6 @@
 $(document).ready(() => {
     $('.currency section').addClass('loading');
-    $.getJSON({ url: "dovizapi.cancaliskan.me" }).done(data => {
+    $.getJSON({ url: "https://cancaliskan-doviz-api.herokuapp.com/" }).done(data => {
         if (data) {
             $(".currency .message").hide();
             $(".currency #dollarBuyingPrice").text(data.Dollar.BuyingPrice);
